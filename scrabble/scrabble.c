@@ -3,16 +3,15 @@
 #include <string.h>
 
 
-int judgment (string word[]);
+string judgment (string word[]);
 
 int main (void)
 {
     string player[2];
-    player[0] = get_string("Player01: ");
-    player[1] = get_string("Player02: ");
+    player[0] = get_string("Player 1: ");
+    player[1] = get_string("Player 2: ");
 
-    string win;
-    win = judgment(player);
+    string win = judgment(player);
 
     printf("%s\n", win);
 }
@@ -23,13 +22,13 @@ string judgment (string word[]) {
     int numbers[2];
     string result = 0;
     string score[7];
-    score[0] = "aeilnorstu";
-    score[1] = "dg";
-    score[2] = "bcmp";
-    score[3] = "fhvwy";
-    score[4] = "k";
-    score[5] = "jx";
-    score[6] = "qz";
+    score[0] = "aeilnorstuAEILNORSTU";
+    score[1] = "dgDG";
+    score[2] = "bcmpBCMP";
+    score[3] = "fhvwyFHVWY";
+    score[4] = "kK";
+    score[5] = "jxJX";
+    score[6] = "qzQZ";
 
     for(int i = 0; i < 2; i++)
     {
@@ -58,16 +57,17 @@ string judgment (string word[]) {
             }
         }
         numbers[i] = number;
+        number = 0;
     }
     if(numbers[0] < numbers[1])
     {
-        result = "Player 2 win";
+        result = "Player 2 win!";
     }
     else
     {
         if(numbers[0] > numbers[1])
         {
-            result = "Player 1 win";
+            result = "Player 1 win!";
         }
         else
         {
@@ -77,5 +77,6 @@ string judgment (string word[]) {
             }
         }
     }
+
     return result;
 }
